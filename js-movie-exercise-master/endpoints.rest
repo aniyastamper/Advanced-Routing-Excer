@@ -1,0 +1,55 @@
+
+### Variables
+@url = http://localhost:3001/api/v1
+@id = 66454e6bbc3a8f6805230531
+
+
+
+### Get all movies (WORKS)---------------------
+GET {{url}}/movies
+
+### Get a movie by id (WORKS) ------------------
+GET {{url}}/movies/{{id}}
+
+### Add a movie (WORKS) ------------------------
+POST {{url}}/movies
+Content-Type: application/json
+
+{
+	"title": "23 Jump Street",
+	"year": 2019,
+	"genre": "Comedy",
+	"director": "Phil Lord, Christopher Miller"
+}
+
+### Add another movie ------------------
+POST {{url}}/movies
+Content-Type: application/json
+
+{
+	"title": "Inception",
+	"year": 2010,
+	"genre": "Sci-Fi",
+	"director": "Christopher Nolan"
+}
+
+### Update a movie (WORKS)---------------------
+PUT {{url}}/movies/{{id}}
+Content-Type: application/json
+
+{
+	"title": "The Dark Knight",
+	"year": 2008,
+	"genre": "Action",
+	"director": "Christopher Nolan"
+}
+
+### Delete a movie ---------------------
+DELETE {{url}}/movies/{{id}}
+
+### Get movies by genre ----------------
+GET {{url}}/movies/genre/Action
+
+### Get movies by director -------------
+GET {{url}}/movies/director/Christopher%20Nolan
+
